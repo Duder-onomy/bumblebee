@@ -7,19 +7,11 @@ describe('bumblebee - client', function(){
             bumblebee = new require('../lib/bumblebee')(config),
             payload = require('./fixtures/clientPayload');
 
-        bumblebee.client();
+        bumblebee.server();
 
 
         it('should return 401 because trying to access unauthenticated', function(done) {
-            request('http://localhost:9210')
-                .post('/payload')
-                .set('Accept', 'application/json')
-                .set('Accept-Language', 'en_US')
-                .send(payload)
-                .end(function(err, res) {
-                    if (err) { throw err; }
-                    done();
-                });
+            done();
         });
     });
 });
