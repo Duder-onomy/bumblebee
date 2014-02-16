@@ -3,8 +3,9 @@ var should = require('chai').should(),
 
 describe('bumblebee - client', function(){
     describe('setup the client and test for a connection', function() {
-        var config = require('./fixtures/config');
-        var bumblebee = new require('../lib/bumblebee')(config);
+        var config = require('./fixtures/config'),
+            bumblebee = new require('../lib/bumblebee')(config),
+            payload = require('./fixtures/payload');
 
         bumblebee.client();
 
@@ -14,6 +15,7 @@ describe('bumblebee - client', function(){
                 .post('/payload')
                 .set('Accept', 'application/json')
                 .set('Accept-Language', 'en_US')
+                .send(payload)
                 .end(function(err, res) {
                     if (err) { throw err; }
                     done();
