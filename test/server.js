@@ -1,17 +1,33 @@
 var should = require('chai').should(),
     request = require('supertest');
 
-describe('bumblebee - client', function(){
-    describe('setup the client and test for a connection', function() {
-        var config = require('./fixtures/config'),
-            bumblebee = new require('../lib/bumblebee')(config),
-            payload = require('./fixtures/clientPayload');
+describe('bumblebee - server (queen)', function(){
+    'use strict';
 
-        bumblebee.server();
+    var config = require('./fixtures/config'),
+        Bumblebee = require('../lib/bumblebee'),
+        bumblebee = new Bumblebee(config),
+        payload = require('./fixtures/serverPayload');
 
 
-        it('should return 401 because trying to access unauthenticated', function(done) {
+    before(function(done){
+        bumblebee.createQueen();
+        bumblebee.on('connected', function(){
             done();
+        });
+    });
+
+    describe('setup the client and test for a connection', function() {
+        it('server should receive a web hook and send back a success status', function(done) {
+            request('http://localhost:9211')
+                .post('/payload')
+                .set('Accept', 'application/json')
+                .set('Accept-Language', 'en_US')
+                .send(payload)
+                .end(function(err, res) {
+                    if (err) { throw err; }
+                    done();
+                });
         });
     });
 });
