@@ -1,4 +1,4 @@
-![Grasshopper Logo](https://s3.amazonaws.com/SolidInteractive/images/bumblebee/bumblebee-hdr.png)
+![Bumblebee Logo](https://s3.amazonaws.com/SolidInteractive/images/bumblebee/bumblebee-hdr.png)
 
 ---------------------------------------------------------------
 
@@ -17,6 +17,8 @@ Github and gitlab both provide the concept of web hooks and building a script to
 We built bumblebee because while it is trivial to setup a script for one project on one server, what happens when you want to scale to 100 projects and 100 servers. What happens if gitlab changes their payload and you have deployed to 100 servers. The problem of scale is why we built bumblebee.
 
 Bumblebee creates a smart, easily maintainable system that can share information between servers hosting applications.
+
+![Bumblebee Summary](https://s3.amazonaws.com/SolidInteractive/images/bumblebee/bumblebee-overview.png)
 
 
 ### Features
