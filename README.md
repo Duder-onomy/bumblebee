@@ -40,6 +40,26 @@ TBD
 TBD
 
 
+### Development Setup
+
+------------------------------------------------------------------
+
+* git clone <repo>
+* npm install
+* grunt db:test (seeds test database)
+* npm test (runs test suite to prove that everything is setup right)
+
+
+### Development Dependency Pre-requisites
+
+------------------------------------------------------------------
+
+* NodeJS `http://nodejs.org/`
+* Grunt CLI `npm install -g grunt-cli`
+* Mocha `npm install -g mocha`
+* Mongodb `http://www.mongodb.org/downloads`
+
+
 ### Contributors
 
 ------------------------------------------------------------------
