@@ -19,6 +19,7 @@ We built bumblebee because while it is trivial to setup a script for one project
 Bumblebee creates a smart, easily maintainable system that can share information between servers hosting applications.
 
 ![Bumblebee Summary](https://s3.amazonaws.com/SolidInteractive/images/bumblebee/bumblebee-overview.png)
+(overly simplistic example)
 
 
 ### Features
