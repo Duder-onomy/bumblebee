@@ -19,8 +19,8 @@ describe('bumblebee - server (queen)', function(){
 
     describe('setup the client and test for a connection', function() {
         it('server should receive a web hook and send back a success status', function(done) {
-            request('http://localhost:9211')
-                .post('/payload')
+            request('http://localhost:9210')
+                .post('/notify')
                 .set('Accept', 'application/json')
                 .set('Accept-Language', 'en_US')
                 .send(payload)
