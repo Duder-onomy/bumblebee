@@ -23,6 +23,10 @@ Here is an overly simplistic example:
 ![Bumblebee Summary](https://s3.amazonaws.com/SolidInteractive/images/bumblebee/bumblebee-overview.png)
 
 
+Here is a more realistic complicated example:
+
+![Bumblebee Summary](https://s3.amazonaws.com/SolidInteractive/images/bumblebee/bumblebee-complicated-overview.png)
+
 
 ### Features
 
