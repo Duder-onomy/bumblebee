@@ -29,9 +29,22 @@ For more information visit our [wiki](https://github.com/Solid-Interactive/bumbl
 TBD
 
 
+### Requirements
+
+------------------------------------------------------------------
+
+TBD
+
+
 ### Steps required to setup a hive
 
 ------------------------------------------------------------------
+
+#### Instalation
+
+TBD
+
+#### Run the tests
 
 TBD
 
