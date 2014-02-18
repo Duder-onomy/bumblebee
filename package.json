@@ -29,7 +29,8 @@
     "q": "~0.9.7",
     "bridgetown-api": "0.0.5",
     "solid-logger-js": "~0.3.8",
-    "superagent": "~0.16.0"
+    "superagent": "~0.16.0",
+    "jsonwebtoken": "~0.1.0"
   },
   "devDependencies": {
     "matchdep": "~0.1.2",
