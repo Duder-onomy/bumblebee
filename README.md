@@ -14,15 +14,13 @@ We built bumblebee because while it is trivial to setup a script for one project
 
 Bumblebee creates a smart, easily maintainable system that can share information between servers hosting applications.
 
-Here is an overly simplistic example:
+Bumblebee is: 
 
-![Bumblebee Summary](https://s3.amazonaws.com/SolidInteractive/images/bumblebee/bumblebee-overview.png)
+* Scalable - New worker bees register themselves with the queenbee with almost no work
+* Simple - No need for a huge robust CD development, adopt our git strategy for publishing and do a simple `git pull` to publish
+* Powered by NodeJS and Grasshopper
 
-
-Here is a more realistic complicated example:
-
-![Bumblebee Summary](https://s3.amazonaws.com/SolidInteractive/images/bumblebee/bumblebee-complicated-overview.png)
-
+For more information visit our [wiki](https://github.com/Solid-Interactive/bumblebee/wiki)
 
 ### Features
 
