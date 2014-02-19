@@ -20,12 +20,13 @@ describe('bumblebee - server (queen)', function(){
     describe('setup the client and test for a connection', function() {
         it('server should receive a web hook and send back a success status', function(done) {
             request('http://localhost:9210')
-                .post('/notify')
+                .post('/queen/build')
                 .set('Accept', 'application/json')
                 .set('Accept-Language', 'en_US')
                 .send(payload)
                 .end(function(err, res) {
                     if (err) { throw err; }
+                    res.statusCode.should.equal(200);
                     done();
                 });
         });

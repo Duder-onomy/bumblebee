@@ -2,10 +2,21 @@ var path = require('path');
 
 module.exports = {
     bumblebee: {
-        protocol: 'http',
-        host: 'localhost',
+        keys: {
+            public: 'eb6ee390-ae43-4977-960f-2df31d98ae83',
+            private: '210cc45f-04de-4363-a1ad-23b492ee3543'
+        },
         port: 9210,
-        name: 'test server'
+        local: {
+            protocol: 'http',
+            host: 'localhost',
+            name: 'test server'
+        },
+        remote: {
+            protocol: 'http',
+            host: 'localhost',
+            name: 'test server'
+        }
     },
     logger: {
         adapters: [{
