@@ -1,16 +1,12 @@
-![Grasshopper Logo](https://s3.amazonaws.com/SolidInteractive/images/bumblebee/bumblebee-hdr.png)
+![Bumblebee Logo](https://s3.amazonaws.com/SolidInteractive/images/bumblebee/bumblebee-hdr.png)
 
 ---------------------------------------------------------------
 
-### ALPHA - TO BE RELEASED OFFICIALLY EARLY 2014
-
-[![Build Status](https://travis-ci.org/Solid-Interactive/bumblebee.png?branch=master)](https://travis-ci.org/Solid-Interactive/bumblebee)
-
-### What am I?
-
-------------------------------------------------------------------
-
 Bumblebee is a client/server REST api that is designed to manage continous deployment for projects hosted on gitlab.
+
+[![Build Status](https://travis-ci.org/Solid-Interactive/bumblebee.png?branch=master)](https://travis-ci.org/Solid-Interactive/bumblebee) ALPHA - TO BE RELEASED OFFICIALLY EARLY 2014
+
+### Bumblebee gives you the power to safely publish your code with a solutions that is both simple and scalable.
 
 Github and gitlab both provide the concept of web hooks and building a script to listen to these web hooks and pull code is pretty trivial.
 
@@ -18,8 +14,22 @@ We built bumblebee because while it is trivial to setup a script for one project
 
 Bumblebee creates a smart, easily maintainable system that can share information between servers hosting applications.
 
+Bumblebee is: 
+
+* Scalable - New worker bees register themselves with the queenbee with almost no work
+* Simple - No need for a huge robust CD development, adopt our git strategy for publishing and do a simple `git pull` to publish
+* Powered by NodeJS and Grasshopper
+
+For more information visit our [wiki](https://github.com/Solid-Interactive/bumblebee/wiki)
 
 ### Features
+
+------------------------------------------------------------------
+
+TBD
+
+
+### Requirements
 
 ------------------------------------------------------------------
 
@@ -30,6 +40,12 @@ TBD
 
 ------------------------------------------------------------------
 
+#### Instalation
+
+TBD
+
+#### Run the tests
+
 TBD
 
 
@@ -38,6 +54,26 @@ TBD
 ------------------------------------------------------------------
 
 TBD
+
+
+### Development Setup
+
+------------------------------------------------------------------
+
+* git clone <repo>
+* npm install
+* grunt db:test (seeds test database)
+* npm test (runs test suite to prove that everything is setup right)
+
+
+### Development Dependency Pre-requisites
+
+------------------------------------------------------------------
+
+* NodeJS `http://nodejs.org/`
+* Grunt CLI `npm install -g grunt-cli`
+* Mocha `npm install -g mocha`
+* Mongodb `http://www.mongodb.org/downloads`
 
 
 ### Contributors
