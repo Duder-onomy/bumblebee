@@ -27,7 +27,7 @@
     "async": "~0.2.9",
     "express": "~3.4.0",
     "q": "~0.9.7",
-    "bridgetown-api": "0.0.5",
+    "bridgetown-api": "0.0.7",
     "solid-logger-js": "~0.3.8",
     "superagent": "~0.16.0",
     "jsonwebtoken": "~0.1.0"
