@@ -11,10 +11,15 @@ describe('bumblebee - server (queen)', function(){
 
 
     before(function(done){
-        bumblebee.createQueen();
+        bumblebee.start();
         bumblebee.on('connected', function(){
             done();
         });
+    });
+
+    after(function(done){
+        bumblebee.stop();
+        done();
     });
 
     describe('setup the client and test for a connection', function() {

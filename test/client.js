@@ -1,7 +1,7 @@
 var should = require('chai').should(),
     request = require('supertest');
 
-describe('bumblebee - server (queen)', function(){
+describe('bumblebee - client (worker)', function(){
     'use strict';
 
     var config = require('./fixtures/config'),
@@ -13,23 +13,25 @@ describe('bumblebee - server (queen)', function(){
 
 
     before(function(done){
+        bumblebee.start();
         bumblebee.on('connected', function(){
-            auth = token.make({
-                repo: 'testrepo',
-                branch: 'mybranch'
-            });
+            auth = token.make(payload);
 
             done();
         });
     });
 
+    after(function(done){
+        bumblebee.stop();
+        done();
+    });
+
     describe('setup the client and test for a connection', function() {
         it('client should return a 401 if a jwt token is not sent to the client', function(done) {
             request('http://localhost:9210')
-                .post('/worker/build')
+                .get('/worker/build')
                 .set('Accept', 'application/json')
                 .set('Accept-Language', 'en_US')
-                .send(payload)
                 .end(function(err, res) {
                     if (err) { throw err; }
                     res.statusCode.should.equal(401);
@@ -39,11 +41,10 @@ describe('bumblebee - server (queen)', function(){
 
         it('client should return a 401 if an api key is not sent to the client', function(done) {
             request('http://localhost:9210')
-                .post('/worker/build')
+                .get('/worker/build')
                 .set('Accept', 'application/json')
                 .set('Accept-Language', 'en_US')
                 .set('authorization', 'Token ' + auth)
-                .send(payload)
                 .end(function(err, res) {
                     if (err) { throw err; }
                     res.statusCode.should.equal(401);
@@ -53,12 +54,11 @@ describe('bumblebee - server (queen)', function(){
 
         it('client should return a 401 if an invalid api key is not sent to the client', function(done) {
             request('http://localhost:9210')
-                .post('/worker/build')
+                .get('/worker/build')
                 .set('Accept', 'application/json')
                 .set('Accept-Language', 'en_US')
                 .set('authorization', 'Token ' + auth)
                 .set('X-API-KEY', '12345')
-                .send(payload)
                 .end(function(err, res) {
                     if (err) { throw err; }
                     res.statusCode.should.equal(401);
@@ -68,12 +68,11 @@ describe('bumblebee - server (queen)', function(){
 
         it('server should receive a web hook and send back a success status', function(done) {
             request('http://localhost:9210')
-                .post('/worker/build')
+                .get('/worker/build')
                 .set('Accept', 'application/json')
                 .set('Accept-Language', 'en_US')
                 .set('authorization', 'Token ' + auth)
                 .set('X-API-KEY', config.bumblebee.keys.public)
-                .send(payload)
                 .end(function(err, res) {
                     if (err) { throw err; }
                     res.statusCode.should.equal(200);
