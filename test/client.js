@@ -79,5 +79,19 @@ describe('bumblebee - client (worker)', function(){
                     done();
                 });
         });
+
+        it('client should respond back with 200 when it is pinged.', function(done) {
+            request('http://localhost:9210')
+                .get('/worker/ping')
+                .set('Accept', 'application/json')
+                .set('Accept-Language', 'en_US')
+                .set('authorization', 'Token ' + auth)
+                .set('X-API-KEY', config.bumblebee.keys.public)
+                .end(function(err, res) {
+                    if (err) { throw err; }
+                    res.statusCode.should.equal(200);
+                    done();
+                });
+        });
     });
 });
