@@ -6,7 +6,7 @@ Bumblebee is a client/server REST api that is designed to manage continous deplo
 
 [![Build Status](https://travis-ci.org/Solid-Interactive/bumblebee.png?branch=master)](https://travis-ci.org/Solid-Interactive/bumblebee) ALPHA - TO BE RELEASED OFFICIALLY EARLY 2014
 
-### Bumblebee gives you the power to safely publish your code with a solutions that is both simple and scalable.
+### Bumblebee gives you the power to safely publish your code with a solution that is both simple and scalable.
 
 Github and gitlab both provide the concept of web hooks and building a script to listen to these web hooks and pull code is pretty trivial.
 
