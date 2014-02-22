@@ -5,6 +5,7 @@ describe('bumblebee - server (queen)', function(){
     'use strict';
 
     var config = require('./fixtures/config'),
+        token = require('../lib/token'),
         Bumblebee = require('../lib/bumblebee'),
         bumblebee = new Bumblebee(config),
         payload = require('./fixtures/serverPayload');
@@ -31,6 +32,29 @@ describe('bumblebee - server (queen)', function(){
                 .send(payload)
                 .end(function(err, res) {
                     if (err) { throw err; }
+                    res.statusCode.should.equal(200);
+                    done();
+                });
+        });
+
+        it('server should receive an enlistment request and register it in grasshopper', function(done) {
+
+
+            var payload = {
+                    "name": "special server",
+                    "machineKey": "myuniquekey",
+                    "description": "This is my description for this machine.",
+                    "url": "http://localhost:9210"
+                },
+                auth = token.make(payload);
+
+            request('http://localhost:9210')
+                .get('/queen/enlist')
+                .set('Accept', 'application/json')
+                .set('Accept-Language', 'en_US')
+                .set('authorization', 'Token ' + auth)
+                .set('X-API-KEY', config.bumblebee.keys.public)
+                .end(function(err, res) {
                     res.statusCode.should.equal(200);
                     done();
                 });
